@@ -3,6 +3,7 @@
 // This page will be available by all 'my-domain.com/news/something' URLs, for example:
 // 'my-domain.com/news/test', 'my-domain.com/news/wtf', 'my-domain.com/news/balls' will all render this page
 
+import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 
 const Detail = () => {
@@ -16,7 +17,12 @@ const Detail = () => {
 
   // We could send a request to the backend API to fetch the news item with 'newsId', for example
 
-  return <h1>The Detail Page</h1>;
+  return (
+    <Fragment>
+      <h1>The Detail Page</h1>
+      <div>{newsId}</div>
+    </Fragment>
+  );
 };
 
 export default Detail;
